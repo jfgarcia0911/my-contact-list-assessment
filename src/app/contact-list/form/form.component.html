@@ -1,0 +1,55 @@
+<div>
+  <div>
+    <button *ngIf="addButton " class="btn btn-dark m-3" (click)="showForm()" >Add User</button>
+    <button  *ngIf="!addButton "class="btn btn-danger m-3" (click)="cancelForm()">Cancel</button>
+    </div>
+  <div  *ngIf="formStatus"class="card card-body bg-light" >
+    <h2 >Add User</h2>
+
+  <form  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="" class="mb-1">Full Name</label>
+      <input
+        placeholder="Juan Dela Cruz"
+        name="name"
+        class="form-control"
+        type="text"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="" class="mb-1">Username</label>
+      <input
+        placeholder="Username"
+        name="username"
+        type="text"
+        class="form-control"
+        formControlName="username"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="" class="mb-1">Email</label>
+      <input
+        placeholder="juandelacruz@mail.com"
+        name="email"
+        type="email"
+        class="form-control"
+        formControlName="email"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="" class="mb-1">Phone</label>
+      <input
+        placeholder="09123456789"
+        name="phone"
+        type="text"
+        class="form-control"
+        formControlName="phone"
+      />
+    </div>
+    <button *ngIf="!updateButton" class="btn btn-block btn-dark my-4">Add New User</button>
+  </form>
+  <button *ngIf="updateButton" class="btn btn-block btn-primary my-4" (click)="onUpdateButton()">
+    Update
+  </button>
+</div>

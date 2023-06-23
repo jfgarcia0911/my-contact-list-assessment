@@ -1,0 +1,30 @@
+<app-form (contactListData)="receiveFormData($event)" [userDetails]="updateDetails"
+(submitForm)="updateUserArr($event)"
+></app-form>
+<div class="card card-body bg-light">
+  <div class="row border mb-1">
+    <div class="col-2">Username</div>
+    <div class="col-2">Name</div>
+    <div class="col-3">Email</div>
+    <div class="col-2">Contact</div>
+    <div class="col-md-3 centerButton">
+      Action
+    </div>
+  </div>
+  <div *ngFor="let contact of contactList; index as i">
+  <div class="row border">
+    <div class="col-2">{{contact.username}}</div>
+    <div class="col-2">{{contact.name}}</div>
+    <div class="col-3">{{contact.email}}</div>
+    <div class="col-2">{{contact.phone}}</div>
+    <div class="col-md-3 centerButton">
+      <button class="btn btn-success" (click)="onViewButton(contact)" routerLink="/view/{{contact.id}}">View</button>
+      <button class="btn btn-primary" (click)="onUpdateButton(contact, contact.id)">Update</button>
+      <button class="btn btn-danger" (click)="onDeleteButton(contact.id)">Delete</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
