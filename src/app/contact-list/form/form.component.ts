@@ -21,7 +21,7 @@ export class FormComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.userForm = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-      username: new FormControl(null, [Validators.required, Validators.minLength(6)]),
+      username: new FormControl(null, [Validators.required, Validators.minLength(3)]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       phone: new FormControl(null, [Validators.required]),
     })
@@ -47,14 +47,15 @@ export class FormComponent implements OnInit, OnChanges {
     this.userForm.reset();
     this.formStatus = false;
     this.addButton = true;
-    this.notifyService.showSuccess('Added Succesfull', 'Good Job');
+    this.updateButton = false;
+    this.notifyService.showSuccess('Added Successfully!');
   }
   onUpdateButton(){
     this.submitForm.emit(this.userForm.value);
     this.userForm.reset();
     this.formStatus = false;
     this.addButton = true;
-    this.notifyService.showSuccess('Update Succesfull', 'Good Job');
+    this.notifyService.showSuccess('Updated Successfully');
   }
 
   showForm(){

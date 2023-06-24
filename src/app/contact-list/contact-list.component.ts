@@ -39,7 +39,7 @@ export class ContactListComponent implements OnInit {
     });
     this.contactList = removeTargetId;
     this.userService.deleteContactDetails(id);
-    this.notifyService.showSuccess('Delete Succesfull', 'Good Job');
+    this.notifyService.showSuccess('Deleted Successfully');
   }
 
   receiveFormData(event: UserModel) {

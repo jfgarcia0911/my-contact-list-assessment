@@ -3,8 +3,8 @@
 ></app-form>
 <div class="card card-body bg-light">
   <div class="row border mb-1">
-    <div class="col-2">Username</div>
     <div class="col-2">Name</div>
+    <div class="col-2">Username</div>
     <div class="col-3">Email</div>
     <div class="col-2">Contact</div>
     <div class="col-md-3 centerButton">
@@ -13,8 +13,8 @@
   </div>
   <div *ngFor="let contact of contactList; index as i">
   <div class="row border">
-    <div class="col-2">{{contact.username}}</div>
     <div class="col-2">{{contact.name}}</div>
+    <div class="col-2">{{contact.username}}</div>
     <div class="col-3">{{contact.email}}</div>
     <div class="col-2">{{contact.phone}}</div>
     <div class="col-md-3 centerButton">
